@@ -5,6 +5,8 @@ class Memo{
 	Scanner scan=new Scanner(System.in);
 	Scanner scan2=new Scanner(System.in);
 	String text;
+	
+	int num;
 	public Memo(){
 	}
 
@@ -16,7 +18,43 @@ class Memo{
 		System.out.println("-------------------------------------------");
 	}
 
-	public void show() {//í˜„ ë°°ì—´ì˜ ë°ì´í„°ë¥¼ ì¶œë ¥í•˜ê¸°ìœ„í•œ í•¨ìˆ˜
-		System.out.println( text);
+	
+	public void update(){
+		System.out.println("-------------------------------------------");
+		System.out.print("select number you want to update: ");
+		int num = scan.nextInt();//updateÇÏ°í ½ÍÀº ¼ıÀÚ 
+		if(num < HW.memo_number){
+			
+			System.out.print("Memo : ");
+			text = scan2.nextLine();
+			HW.memos[num].text = text;
+			System.out.println("Success!");
+		}
+		else{
+			System.out.println("Wrong input!");
+			
+		}
+	
+		System.out.println("-------------------------------------------");
+	}
+	public void delete(){
+		System.out.println("-------------------------------------------");
+		System.out.print("select number you want to delte: ");
+		num = scan.nextInt();
+		if(num < HW.memo_number){
+			for(int j=num; j<=HW.memo_number; j++){
+				HW.memos[j] = HW.memos[j+1];
+				
+			}
+			--HW.memo_number;
+			System.out.println("Success!");	
+		}
+		else
+			System.out.println("Wrong input!");
+		System.out.println("-------------------------------------------");
+			
+	}
+	public void show() {//Çö ¹è¿­ÀÇ µ¥ÀÌÅÍ¸¦ Ãâ·ÂÇÏ±âÀ§ÇÑ ÇÔ¼ö
+		System.out.println(text);
 	}
 }

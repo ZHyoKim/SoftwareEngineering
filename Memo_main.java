@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 class Memo_main{
-	int in_choice;//ë©”ë‰´ ë‚´ë¶€ì˜ ì„ íƒ
-	boolean flag=true;//whileë¬¸ ì¡°ê±´
+	int in_choice;//¸Ş´º ³»ºÎÀÇ ¼±ÅÃ
+	boolean flag=true;//while¹® Á¶°Ç
 	Scanner scan=new Scanner(System.in);
 	public Memo_main(){
-		//ìƒì„±ì
+		//»ı¼ºÀÚ
 	}
 	public void menu(){
 		while(flag){
@@ -15,24 +15,29 @@ class Memo_main{
 			System.out.println("4. Quit");
 			System.out.println("Select : ");
 			in_choice=scan.nextInt();
-
+			Memo Memo = new Memo();
+			
+			
 			switch(in_choice){
 
 			case 1: 
 				if(HW.memo_number<30){
 					HW.memos[HW.memo_number]=new Memo();
-					HW.memos[HW.memo_number].create();//í•´ë‹¹ ë°°ì—´ì˜ ìœ„ì¹˜ì— í•¨ìˆ˜í˜¸ì¶œí•´ì„œ ìƒì„±
-					++HW.memo_number;//ë‹¤ìŒ ë°°ì—´ë¡œ ìë¦¬ì´ë™.
+					HW.memos[HW.memo_number].create();//ÇØ´ç ¹è¿­ÀÇ À§Ä¡¿¡ ÇÔ¼öÈ£ÃâÇØ¼­ »ı¼º
+					++HW.memo_number;//´ÙÀ½ ¹è¿­·Î ÀÚ¸®ÀÌµ¿.
 				}
 				else
-					System.out.println("Capacity exceeded");//ë°°ì—´ì˜ í¬ê¸°ë¥¼ ë²—ì–´ë‚ ìˆ˜ì—†ìŒ.
+					System.out.println("Capacity exceeded");//¹è¿­ÀÇ Å©±â¸¦ ¹ş¾î³¯¼ö¾øÀ½.
 				break;
 
 			case 2: 
-				this.list();//updateì‹œ ë¦¬ìŠ¤íŠ¸ë¥¼ ë¨¼ì €ë³´ì—¬ì£¼ëŠ” ê²ƒ. ì—¬ê¸°ì„œ í•´ë„ë˜ê³  update ë©”ì†Œì—ì„œ í•´ë„ë˜ê³ ! ê·¸ëƒ¥ ì—¬ê¸°ì— ì¼ë‹¨ ì¨ë´¤
+				this.list();//update½Ã ¸®½ºÆ®¸¦ ¸ÕÀúº¸¿©ÁÖ´Â °Í. 
+				Memo.update();
 				break;
 
-			case 3:
+			case 3://delete
+				this.list();
+				Memo.delete();
 				break;
 
 			case 4: 
@@ -45,7 +50,7 @@ class Memo_main{
 	}//menu end
 	public void list(){
 		System.out.println("-------------------------------------------");
-		for(int i=0;i<HW.memo_number;++i){//ì§€ê¸ˆê¹Œì§€ì˜ ë°ì´í„°ë¥¼ ë³´ì—¬ì¤Œ
+		for(int i=0;i<HW.memo_number;++i){//Áö±İ±îÁöÀÇ µ¥ÀÌÅÍ¸¦ º¸¿©ÁÜ
 			System.out.print(i+" : " );
 			HW.memos[i].show();
 		}
