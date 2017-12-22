@@ -25,6 +25,7 @@ public class HW{
 				break;
 			case 2:		// Calculator
 				Calculator Calculator = new Calculator();
+				Calculator.menu();
 				break;
 			case 3:		// Account Book
 				Account_main Account_main = new Account_main();
