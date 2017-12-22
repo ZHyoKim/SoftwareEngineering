@@ -23,7 +23,7 @@ class Memo_main{
 			case 1: 
 				if(HW.memo_number<30){
 					HW.memos[HW.memo_number]=new Memo();
-					HW.memos[HW.memo_number].create();//해당 배열의 위치에 함수호출해서 생성
+					HW.memos[HW.memo_number].type();//해당 배열의 위치에 함수호출해서 생성
 					++HW.memo_number;//다음 배열로 자리이동.
 				}
 				else

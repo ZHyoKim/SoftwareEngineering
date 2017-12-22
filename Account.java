@@ -15,7 +15,17 @@ class Account{
 	public Account(){
 	}
 
-	public void create(){//
+	
+	public boolean create(int date,String item,int price){
+		this.date=date;
+		this.item=item;
+		this.price=price;
+		if(this.date==date&&this.item==item&&this.price==price)
+			return true;
+		else
+			return false;
+	}
+	public void type(){//
 		System.out.println("-------------------------------------------");
 		System.out.print("date : ");
 		date=scan.nextInt();
@@ -23,7 +33,8 @@ class Account{
 		item=scan2.next();
 		System.out.print("price : ");
 		price=scan.nextInt();
-		System.out.println("Success!");
+		if (create(date,item,price))
+			System.out.println("Success!");
 		System.out.println("-------------------------------------------");
 
 	}

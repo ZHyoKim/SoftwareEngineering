@@ -10,13 +10,23 @@ class Memo{
 	public Memo(){
 	}
 
-	public void create(){//
+	public boolean create(String input){
+		this.text=input;
+		if(text==input)
+			return true;
+		else
+			return false;
+	}
+	
+	public void type(){//
 		System.out.println("-------------------------------------------");
 		System.out.print("Memo : ");
 		text=scan.nextLine();
-		System.out.println("Success!");
+		if(create(text))
+			System.out.println("Success!");
 		System.out.println("-------------------------------------------");
 	}
+
 
 	
 	public void update(){

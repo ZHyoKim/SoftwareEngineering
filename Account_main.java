@@ -21,7 +21,7 @@ class Account_main{
 			case 1: 
 				if(HW.account_number<20){
 					HW.accounts[HW.account_number]=new Account();
-					HW.accounts[HW.account_number].create();//해당 배열의 위치에 함수호출해서 생성
+					HW.accounts[HW.account_number].type();//해당 배열의 위치에 함수호출해서 생성
 					++HW.account_number;//다음 배열로 자리이동
 				}
 				else
