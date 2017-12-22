@@ -4,9 +4,9 @@ import org.junit.*;
 public class CalculatorTest {
 
 	@Test
-	public void testAdd() {
+	public void testDivide() {
 		Calculator c = new Calculator();
-		assertTrue(c.add(10.5, 2.5) == 13);
+		assertTrue(c.divide(10, 2.5) == 4);
 	}
 	
 	@Test
