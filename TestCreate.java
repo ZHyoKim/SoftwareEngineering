@@ -11,11 +11,6 @@ public class TestCreate{
 	@Test
 	public void testCreateAccount() {
 		Account account = new Account();
-		account.create(20171225,"pen",2017);
-		assertTrue(account.date==20171225);
-		assertEquals(account.item,"pen");
-		assertTrue(account.price==2017);
-
-
+		assertTrue(account.create(20171225,"pen",2017));
 	}
 } 
