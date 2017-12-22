@@ -47,7 +47,7 @@ class Memo{
 	
 		System.out.println("-------------------------------------------");
 	}
-	public void delete(){
+	public void delete(){ //제거 위한 함수
 		System.out.println("-------------------------------------------");
 		System.out.print("select number you want to delte: ");
 		num = scan.nextInt();
