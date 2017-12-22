@@ -6,7 +6,7 @@ public class CalculatorTest {
 	@Test
 	public void testAdd() {
 		Calculator c = new Calculator();
-		assertTrue(c.add(10.03, 4.2) == 14.23);
+		assertTrue(c.add(10.5, 2.5) == 13);
 	}
 	
 	@Test
