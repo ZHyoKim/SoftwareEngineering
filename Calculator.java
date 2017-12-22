@@ -145,4 +145,4 @@ class Calculator{
 		return value * 9/5 +32;
 	}
 }
-}
+
