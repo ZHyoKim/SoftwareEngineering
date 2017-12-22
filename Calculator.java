@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Calculator{
 	double result=0;
-	Calculator(){
+	void ShowMenu(){
 		int select;
 		do{
 			Scanner scan = new Scanner(System.in);
