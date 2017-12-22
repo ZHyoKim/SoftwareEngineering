@@ -1,6 +1,8 @@
+package test;
 import java.util.Scanner;
 
 class Calculator{
+	double result=0;
 	Calculator(){
 		int select;
 		do{
@@ -91,45 +93,57 @@ class Calculator{
 
 	void convert(double value, String unit) {
 		// TODO Auto-generated method stub
+		String unit_reverse = "";
 		switch(unit){
 		case "pound":
-			System.out.println("----------------------------");
-			double kg_value = value * 0.453592; // pound -> kg
-			System.out.println(value+ " pound" + " -> " + kg_value + " kg" );
-			System.out.println("----------------------------");
+			result = PoundToKg(value); //value * 0.453592; // pound -> kg
+			unit_reverse = "kg";
 			break;
 		case "kg": //kg -> pound
-			System.out.println("----------------------------");
-			double pound_value = value * 2.204622; // kg -> pound
-			System.out.println(value+ " kg" + " -> " + pound_value + " pound" );
-			System.out.println("----------------------------");
+			result = KgToPound(value); // kg -> pound
+			unit_reverse = "pound";
 			break;
 		case "inch":
-			System.out.println("----------------------------");
-			double cm_value = value * 2.54; // inch -> cm
-			System.out.println(value+ " inch" + " -> " + cm_value + " cm" );
-			System.out.println("----------------------------");
+			result = InchToCm(value); // inch -> cm
+			unit_reverse = "cm";
 			break;
 		case "cm":
-			System.out.println("----------------------------");
-			double inch_value = value / 2.54; // cm -> inch
-			System.out.println(value+ " cm" + " -> " + inch_value + " inch" );
-			System.out.println("----------------------------");
+			result = CmToInch(value); // cm -> inch
+			unit_reverse = "inch";
 			break;
 		case "F":
-			System.out.println("----------------------------");
-			double C_value = ((value-32)*5)/9 ; // F -> C
-			System.out.println(value+ " F" + " -> " + C_value + " C" );
-			System.out.println("----------------------------");
+			result = FToC(value) ; // F -> C
+			unit_reverse = "C";
 			break;
 		case "C":
-			System.out.println("----------------------------");
-			double F_value = value * 9/5 +32; //C -> F
-			System.out.println(value+ "C" + "-> " + F_value + "F" );
-			System.out.println("----------------------------");
+			result = CToF(value); //C -> F
+			unit_reverse = "F";
 			break;
 	
 		}
+		System.out.println("----------------------------");
+		System.out.println(value+ " " +unit + " -> " + result + unit_reverse );
+		System.out.println("----------------------------");
+		
 	}
-
+	
+	double PoundToKg(double value){
+		return value * 0.453592;
+	}
+	double KgToPound(double value){
+		return value * 2.204622;
+	}
+	double InchToCm(double value){
+		return value * 2.54;
+	}
+	double CmToInch(double value){
+		return value / 2.54;
+	}
+	double FToC(double value){
+		return ((value-32)*5)/9;
+	}
+	double CToF(double value){
+		return value * 9/5 +32;
+	}
+}
 }
