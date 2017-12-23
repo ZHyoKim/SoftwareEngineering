@@ -15,7 +15,6 @@ class Account{
 	public Account(){
 	}
 
-	
 	public boolean create(int date,String item,int price){
 		this.date=date;
 		this.item=item;
@@ -43,7 +42,7 @@ class Account{
 		System.out.println( " [date=" + date + ", item=" + item + ", price=" + price + "]");
 	}
 	
-	public void update() {
+	public void updateInput() {
 		Account_main account_main = new Account_main();
 		account_main.list();	//update시 리스트를 먼저보여주는 것. 여기서 해도되고 update 메소에서 해도되고! 그냥 여기에 일단 써봤
 		System.out.print("Select : ");
@@ -54,18 +53,26 @@ class Account{
 		}
 		System.out.print("date(Before "+HW.accounts[update_choice].date+") : ");
 		update_date=scan.nextInt();
-		HW.accounts[update_choice].date = update_date;
+	//	HW.accounts[update_choice].date = update_date;
 		System.out.print("item(Before "+HW.accounts[update_choice].item+") : ");
 		update_item=scan.next();
-		HW.accounts[update_choice].item = update_item;
+	//	HW.accounts[update_choice].item = update_item;
 		System.out.print("price(Before "+HW.accounts[update_choice].price+") : ");
 		update_price=scan.nextInt();
+	//	HW.accounts[update_choice].price = update_price;
+		update(update_choice, update_date, update_item, update_price);
+		
+	}
+	
+	static void update(int update_choice, int update_date, String update_item, int update_price){
+		HW.accounts[update_choice].date = update_date;
+		HW.accounts[update_choice].item = update_item;
 		HW.accounts[update_choice].price = update_price;
 		System.out.println("Update success!");
 		System.out.println("-------------------------------------------");
 	}
 	
-	public void delete() {
+	public void deleteInput() {
 		Account_main account_main = new Account_main();
 		account_main.list();
 		System.out.println("Select : ");
@@ -74,6 +81,10 @@ class Account{
 			System.out.println("Please check your select!");
 			return;
 		}
+		int result = delete(delete_choice);
+	}
+	
+	static int delete(int delete_choice){
 		int i=0;
 		for(i=delete_choice; i<HW.account_number; i++){
 			HW.accounts[i]=HW.accounts[i+1];
@@ -81,6 +92,7 @@ class Account{
 		HW.account_number--;
 		System.out.println("Delete success!");
 		System.out.println("-------------------------------------------");
+		return HW.account_number;
 	}
 
 }

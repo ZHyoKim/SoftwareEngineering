@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class HW{
 
-	//static Account[] accounts= new Account[20];
+	static Account[] accounts= new Account[20];
 	static int account_number=0;
 	static Memo[] memos=new Memo[30];
 	static int memo_number=0;

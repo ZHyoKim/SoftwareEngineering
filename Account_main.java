@@ -35,7 +35,7 @@ class Account_main{
 				}
 				//여기 있던거 Account.java로 옮김
 				Account account_update = new Account();
-				account_update.update();
+				account_update.updateInput();
 				break;
 				
 			case 3:
@@ -45,7 +45,7 @@ class Account_main{
 				}
 				//여기 있던거 Account.java로 옮김
 				Account account_delete = new Account();
-				account_delete.delete();
+				account_delete.deleteInput();
 				break;
 
 			case 4: 
