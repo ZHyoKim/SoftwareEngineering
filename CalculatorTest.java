@@ -1,12 +1,12 @@
-import static org.junit.Assert.*;
 import org.junit.*;
+import static org.junit.Assert.*;
 
 public class CalculatorTest {
 
 	@Test
-	public void testDivide() {
+	public void testSubtract() {
 		Calculator c = new Calculator();
-		assertTrue(c.divide(10, 2.5) == 4);
+		assertTrue(c.subtract(10, 2.5) == 7.5);
 	}
 	
 	@Test
