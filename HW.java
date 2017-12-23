@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class HW{
 
-	static Account[] accounts= new Account[20];
+	//static Account[] accounts= new Account[20];
 	static int account_number=0;
 	static Memo[] memos=new Memo[30];
 	static int memo_number=0;
@@ -21,7 +21,8 @@ public class HW{
 			switch (select){
 			case 1:		// Memo Manager
 				Memo_main Memo_main = new Memo_main();
-				Memo_main.menu();//세부메뉴를 보여주고, 메모가 이루어지는 곳.
+				Memo_main.menu();
+	
 				break;
 			case 2:		// Calculator
 				Calculator Calculator = new Calculator();
@@ -31,6 +32,7 @@ public class HW{
 				Account_main Account_main = new Account_main();
 				Account_main.menu();
 				break;
+			
 			case 4:		//Quit
 				System.out.println("Quit");
 				System.exit(0);

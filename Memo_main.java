@@ -17,7 +17,6 @@ class Memo_main{
 			in_choice=scan.nextInt();
 			Memo Memo = new Memo();
 			
-			
 			switch(in_choice){
 
 			case 1: 
@@ -32,12 +31,14 @@ class Memo_main{
 
 			case 2: 
 				this.list();//update시 리스트를 먼저보여주는 것. 
-				Memo.update();
+				Memo memo_u = new Memo();
+				memo_u.update();
 				break;
 
 			case 3://delete
 				this.list();
-				Memo.delete();
+				Memo memo_d = new Memo();
+				memo_d.delete();
 				break;
 
 			case 4: 
